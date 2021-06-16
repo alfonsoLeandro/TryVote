@@ -1,0 +1,26 @@
+name: TryVote
+version: ${project.version}
+main: net.tryplay.tryvote.TryVote
+api-version: "1.13"
+authors: [lelesape]
+description: ${project.description}
+website: http://bit.ly/2mwvHWN
+
+commands:
+  tryVote:
+    description: Main command
+    usage: /command help|version| reload
+
+permissions:
+  tryVote.version:
+    description: Allows you to check the plugins version
+    default: op
+  tryVote.reload:
+    description: Allows you to reload the plugin
+    default: op
+  tryVote.*:
+    description: Gives access to every permission available
+    default: op
+    children:
+      tryVote.version: true
+      tryVote.reload: true
